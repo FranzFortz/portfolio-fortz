@@ -49,7 +49,7 @@ export function ContactForm() {
           id="contact-name"
           type="text"
           autoComplete="name"
-          className="w-full rounded-lg border border-zinc-200 bg-transparent px-3 py-2 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-zinc-400 dark:border-zinc-700"
+          className="w-full rounded-lg border border-border bg-transparent px-3 py-2 text-sm text-foreground outline-none ring-offset-background transition-shadow focus-visible:ring-2 focus-visible:ring-ring"
           {...register("name")}
         />
         {errors.name ? (
@@ -66,7 +66,7 @@ export function ContactForm() {
           id="contact-email"
           type="email"
           autoComplete="email"
-          className="w-full rounded-lg border border-zinc-200 bg-transparent px-3 py-2 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-zinc-400 dark:border-zinc-700"
+          className="w-full rounded-lg border border-border bg-transparent px-3 py-2 text-sm text-foreground outline-none ring-offset-background transition-shadow focus-visible:ring-2 focus-visible:ring-ring"
           {...register("email")}
         />
         {errors.email ? (
@@ -82,7 +82,7 @@ export function ContactForm() {
         <textarea
           id="contact-message"
           rows={5}
-          className="w-full resize-y rounded-lg border border-zinc-200 bg-transparent px-3 py-2 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-zinc-400 dark:border-zinc-700"
+          className="w-full resize-y rounded-lg border border-border bg-transparent px-3 py-2 text-sm text-foreground outline-none ring-offset-background transition-shadow focus-visible:ring-2 focus-visible:ring-ring"
           {...register("message")}
         />
         {errors.message ? (

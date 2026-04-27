@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/site.config";
 import { buildPageMetadata } from "@/shared/seo";
 import { Button } from "@/shared/components/ui/button";
+import { MotionSection } from "@/shared/components/motion-section";
 
 export const metadata = buildPageMetadata({
   title: "Home",
@@ -12,16 +13,17 @@ export const metadata = buildPageMetadata({
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-10">
-      <section className="space-y-4">
-        <p className="text-sm font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
-          Portfolio
-        </p>
-        <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+    <div className="flex flex-col gap-16 sm:gap-20">
+      <MotionSection className="space-y-6">
+        <p className="text-sm text-muted">Welcome</p>
+        <h1 className="font-display text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
           {siteConfig.name}
         </h1>
-        <p className="max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+        <p className="max-w-prose text-lg leading-relaxed text-muted">
           {siteConfig.description}
+        </p>
+        <p className="max-w-prose border-l-2 border-accent/40 pl-4 text-base leading-relaxed text-foreground/90">
+          {siteConfig.focusLine}
         </p>
         <div className="flex flex-wrap gap-3 pt-2">
           <Button asChild>
@@ -34,7 +36,7 @@ export default function HomePage() {
             <Link href="/contact">Get in touch</Link>
           </Button>
         </div>
-      </section>
+      </MotionSection>
     </div>
   );
 }

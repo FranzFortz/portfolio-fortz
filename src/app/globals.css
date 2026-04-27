@@ -1,21 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f7f4;
+  --foreground: #1c1917;
+  --muted: #57534e;
+  --muted-bg: #eeedea;
+  --border: color-mix(in oklch, var(--foreground) 8%, transparent);
+  --accent: #4a6678;
+  --accent-hover: #3d5565;
+  --ring: #4a6678;
+  --card: #ffffff;
+  --elevate: 0 4px 24px -4px color-mix(in oklch, var(--foreground) 12%, transparent);
+}
+
+.dark {
+  --background: #141312;
+  --foreground: #eae6e3;
+  --muted: #a8a29e;
+  --muted-bg: #1f1e1c;
+  --border: color-mix(in oklch, var(--foreground) 12%, transparent);
+  --accent: #8ba7b8;
+  --accent-hover: #a3bcc9;
+  --ring: #8ba7b8;
+  --card: #1a1918;
+  --elevate: 0 4px 28px -6px color-mix(in oklch, #000 55%, transparent);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-bg: var(--muted-bg);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Display serif from next/font (see layout.tsx --font-source-serif) */
+  --font-display: var(--font-source-serif);
+  --shadow-soft: var(--elevate);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 

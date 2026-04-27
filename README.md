@@ -37,7 +37,7 @@ SEO: `sitemap.xml` and `robots.txt` are generated from [`src/app/sitemap.ts`](sr
 
 | Area | Purpose |
 |------|---------|
-| `src/app/(site)/` | Marketing layout, tab nav, section pages |
+| `src/app/(site)/` | Marketing layout, dropdown nav, motion template, section pages |
 | `src/app/api/` | Route handlers (e.g. health) |
 | `src/features/` | Domain data, getters, contact schema/actions |
 | `src/shared/` | UI primitives, `cn`, theme, SEO helpers |
@@ -45,9 +45,11 @@ SEO: `sitemap.xml` and `robots.txt` are generated from [`src/app/sitemap.ts`](sr
 
 ## Main dependencies
 
-- **UI:** Tailwind CSS v4, `class-variance-authority`, `@radix-ui/react-slot`, `lucide-react`
+- **UI:** Tailwind CSS v4, `class-variance-authority`, `@radix-ui/react-slot`, `@radix-ui/react-dropdown-menu`, `lucide-react`, `framer-motion`
 - **Forms:** `react-hook-form`, `@hookform/resolvers`, `zod`
 - **Theme:** `next-themes`
+
+Design tokens (accent, neutrals, soft shadow) live in [`src/app/globals.css`](src/app/globals.css). Display headings use **Source Serif 4**; UI/body uses **Geist Sans** ([`src/app/layout.tsx`](src/app/layout.tsx)).
 
 ## Scripts
 
