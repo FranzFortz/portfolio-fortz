@@ -1,12 +1,12 @@
 # portfolio-fortz
 
-Personal portfolio —
+Personal portfolio — [Next.js](https://nextjs.org) (App Router) with a **feature-first** data layer under `src/features` and a URL-based marketing shell under `src/app/(site)`.
 
 **Repository:** [https://github.com/FranzFortz/portfolio-fortz](https://github.com/FranzFortz/portfolio-fortz)
 
 ## Getting started
 
-1. Copy environment template (optional for local dev):
+1. Copy environment template (set production URL for correct OG/sitemap URLs):
 
    ```bash
    copy .env.example .env.local
@@ -21,14 +21,33 @@ Personal portfolio —
 
 3. Open [http://localhost:3000](http://localhost:3000). Health check: [http://localhost:3000/api/health](http://localhost:3000/api/health).
 
+## Routes
+
+| Path | Content |
+|------|---------|
+| `/` | Home |
+| `/about` | About |
+| `/skills` | Skills (from `src/features/skills`) |
+| `/projects` | Projects (from `src/features/projects`) |
+| `/contact` | Contact form + config |
+
+SEO: `sitemap.xml` and `robots.txt` are generated from [`src/app/sitemap.ts`](src/app/sitemap.ts) and [`src/app/robots.ts`](src/app/robots.ts).
+
 ## Project layout
 
 | Area | Purpose |
 |------|---------|
-| `src/app/` | Routes and layouts (minimal until the frontend phase). |
-| `src/features/` | Projects, skills, experience, social links, contact config — types, static data, server-safe getters. |
-| `src/shared/` | Shared utilities (e.g. `cn` for class names). |
-| `src/site.config.ts` | Site name, description, base URL. |
+| `src/app/(site)/` | Marketing layout, tab nav, section pages |
+| `src/app/api/` | Route handlers (e.g. health) |
+| `src/features/` | Domain data, getters, contact schema/actions |
+| `src/shared/` | UI primitives, `cn`, theme, SEO helpers |
+| `src/site.config.ts` | Site name, description, base URL |
+
+## Main dependencies
+
+- **UI:** Tailwind CSS v4, `class-variance-authority`, `@radix-ui/react-slot`, `lucide-react`
+- **Forms:** `react-hook-form`, `@hookform/resolvers`, `zod`
+- **Theme:** `next-themes`
 
 ## Scripts
 
