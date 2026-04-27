@@ -1,6 +1,6 @@
 # portfolio-fortz
 
-Personal portfolio — [Next.js](https://nextjs.org) (App Router) with a **feature-first** data layer under `src/features`. UI sections (Home, About, Skills, Projects, Contact) will build on the same modules in a follow-up frontend pass.
+Personal portfolio —
 
 **Repository:** [https://github.com/FranzFortz/portfolio-fortz](https://github.com/FranzFortz/portfolio-fortz)
 
