@@ -1,8 +1,6 @@
-export type SkillCategory = "frontend" | "backend" | "tools" | "other";
-
-export type Skill = {
+/** Outcome-focused strength (no tool lists or proficiency scores). */
+export type Strength = {
   id: string;
-  name: string;
-  category: SkillCategory;
-  proficiency?: 1 | 2 | 3 | 4 | 5;
+  headline: string;
+  detail: string;
 };

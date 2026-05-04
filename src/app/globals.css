@@ -1,29 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f7f4;
-  --foreground: #1c1917;
-  --muted: #57534e;
-  --muted-bg: #eeedea;
-  --border: color-mix(in oklch, var(--foreground) 8%, transparent);
-  --accent: #4a6678;
-  --accent-hover: #3d5565;
-  --ring: #4a6678;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --muted: #525252;
+  --muted-bg: #f4f4f5;
+  --border: color-mix(in oklch, var(--foreground) 10%, transparent);
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --ring: #2563eb;
   --card: #ffffff;
-  --elevate: 0 4px 24px -4px color-mix(in oklch, var(--foreground) 12%, transparent);
+  --elevate: 0 4px 24px -4px color-mix(in oklch, var(--foreground) 10%, transparent);
 }
 
 .dark {
-  --background: #141312;
-  --foreground: #eae6e3;
-  --muted: #a8a29e;
-  --muted-bg: #1f1e1c;
-  --border: color-mix(in oklch, var(--foreground) 12%, transparent);
-  --accent: #8ba7b8;
-  --accent-hover: #a3bcc9;
-  --ring: #8ba7b8;
-  --card: #1a1918;
-  --elevate: 0 4px 28px -6px color-mix(in oklch, #000 55%, transparent);
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --muted: #a3a3a3;
+  --muted-bg: #171717;
+  --border: color-mix(in oklch, var(--foreground) 14%, transparent);
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --ring: #60a5fa;
+  --card: #141414;
+  --elevate: 0 4px 28px -6px color-mix(in oklch, #000 50%, transparent);
 }
 
 @theme inline {
@@ -38,7 +38,6 @@
   --color-card: var(--card);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  /* Display serif from next/font (see layout.tsx --font-source-serif) */
   --font-display: var(--font-source-serif);
   --shadow-soft: var(--elevate);
 }
@@ -53,4 +52,27 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.pad-inline-page {
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 640px) {
+  .pad-inline-page {
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (min-width: 768px) {
+  .pad-inline-page {
+    padding-left: max(2rem, env(safe-area-inset-left, 0px));
+    padding-right: max(2rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+.pad-top-safe-header {
+  padding-top: max(0.75rem, env(safe-area-inset-top, 0px));
 }

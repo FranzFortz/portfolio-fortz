@@ -1,14 +1,14 @@
+/** In-page sections (single-page layout). Home is the logo / top. */
 export const primaryNav = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/skills", label: "Skills" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#work", label: "Work" },
+  { href: "/#skills", label: "Strengths" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
 export type PrimaryNavItem = (typeof primaryNav)[number];
 
-/** Paths for sitemap (same order as nav; home is ""). */
+/** Public URL paths for sitemap (single landing route). */
 export function getPrimaryNavPaths(): string[] {
-  return primaryNav.map((item) => (item.href === "/" ? "" : item.href));
+  return [""];
 }

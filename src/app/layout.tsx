@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { siteConfig } from "@/site.config";
 import { ThemeProvider } from "@/shared/components/theme-provider";
@@ -29,6 +29,12 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,10 +43,10 @@ export default function RootLayout({
   return (
     <html
       lang={siteConfig.locale}
-      className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} min-h-dvh antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

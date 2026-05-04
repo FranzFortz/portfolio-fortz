@@ -13,13 +13,18 @@ export function buildPageMetadata({
   path,
 }: PageMeta): Metadata {
   const pageTitle = `${title} · ${siteConfig.name}`;
+  const canonical = new URL(path || "/", siteConfig.url).toString();
+
   return {
     title,
     description,
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: pageTitle,
       description,
-      url: path,
+      url: canonical,
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type: "website",

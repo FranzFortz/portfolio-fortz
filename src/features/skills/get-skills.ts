@@ -1,10 +1,8 @@
-import { SKILLS } from "./data/skills";
-import type { Skill, SkillCategory } from "./types";
+import { STRENGTHS } from "./data/skills";
+import type { Strength } from "./types";
 
-export function getSkills(): Skill[] {
-  return SKILLS;
-}
+const MAX_ON_LANDING = 5;
 
-export function getSkillsByCategory(category: SkillCategory): Skill[] {
-  return SKILLS.filter((s) => s.category === category);
+export function getSkills(): Strength[] {
+  return STRENGTHS.slice(0, MAX_ON_LANDING);
 }
