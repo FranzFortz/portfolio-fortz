@@ -2,18 +2,21 @@ import type { Strength } from "@/features/skills/types";
 import { FadeIn } from "@/shared/components/motion-section";
 import { LandingSection } from "./landing-section";
 
+const DEFAULT_INTRO =
+  "What I bring day to day — outcomes first, without the noise.";
+
 type StrengthsSectionProps = {
   strengths: Strength[];
+  intro?: string;
 };
 
-export function StrengthsSection({ strengths }: StrengthsSectionProps) {
+export function StrengthsSection({
+  strengths,
+  intro = DEFAULT_INTRO,
+}: StrengthsSectionProps) {
   return (
     <FadeIn>
-      <LandingSection
-        id="skills"
-        title="Strengths"
-        intro="What I bring day to day — outcomes first, without the noise."
-      >
+      <LandingSection id="skills" title="Strengths" intro={intro}>
         <ul className="grid gap-8 sm:grid-cols-2 lg:gap-10">
           {strengths.map((s) => (
             <li key={s.id} className="max-w-md">

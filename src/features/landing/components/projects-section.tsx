@@ -5,18 +5,21 @@ import { FadeIn } from "@/shared/components/motion-section";
 import { cn } from "@/shared/cn";
 import { LandingSection } from "./landing-section";
 
+const DEFAULT_INTRO =
+  "A few recent problems — short, scan-friendly, with links when available.";
+
 type ProjectsSectionProps = {
   projects: Project[];
+  intro?: string;
 };
 
-export function ProjectsSection({ projects }: ProjectsSectionProps) {
+export function ProjectsSection({
+  projects,
+  intro = DEFAULT_INTRO,
+}: ProjectsSectionProps) {
   return (
     <FadeIn>
-      <LandingSection
-        id="work"
-        title="Selected work"
-        intro="A few recent problems — short, scan-friendly, with links when available."
-      >
+      <LandingSection id="work" title="Selected work" intro={intro}>
         <ul className="flex flex-col gap-12 lg:gap-16">
           {projects.map((project) => (
             <li
@@ -27,6 +30,11 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
                   {project.title}
                 </h3>
+                {project.isSample ? (
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted">
+                    Sample case study — not client work
+                  </p>
+                ) : null}
                 <p className="text-sm font-medium text-foreground/90">
                   <span className="text-muted">Problem · </span>
                   {project.problem}

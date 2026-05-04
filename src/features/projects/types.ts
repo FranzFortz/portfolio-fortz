@@ -13,4 +13,6 @@ export type Project = {
   tags: string[];
   featured?: boolean;
   thumbnailSrc?: string;
+  /** Honest label in UI: sample / portfolio scenario, not paid client work. */
+  isSample?: boolean;
 };
